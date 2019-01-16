@@ -1,0 +1,41 @@
+{
+	"name": "blog-cli",
+	"version": "1.0.0",
+	"description": "A cli to create blog posts for static site generators.",
+	"license": "MIT",
+	"repository": "kahlil/blog-cli",
+	"author": {
+		"name": "Kahlil Lechelt",
+		"email": "hello@kahlil.info",
+		"url": "http://kahlillechelt.com"
+	},
+	"bin": {
+		"blog": "cli.js"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js",
+		"cli.js"
+	],
+	"keywords": [
+		"cli-app",
+		"cli",
+		""
+	],
+	"dependencies": {
+		"conf": "^2.1.0",
+		"git-root-dir": "^1.0.2",
+		"meow": "^5.0.0",
+		"opn": "^5.4.0",
+		"simple-git": "^1.107.0"
+	},
+	"devDependencies": {
+		"ava": "^0.25.0",
+		"xo": "^0.21.0"
+	}
+}
