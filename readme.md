@@ -40,7 +40,7 @@ Options
 
 Examples
 	$ blog --path ~/my-blog/posts
-	Saved the path \`~/my-blog/posts\` for your blog posts
+	Saved the path `~/my-blog/posts` for your blog posts
 
 	$ blog --editor 'visual studio code'
 	Saved visual studio code as your editor
