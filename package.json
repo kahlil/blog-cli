@@ -1,6 +1,6 @@
 {
 	"name": "@kahlil/blog-cli",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A cli to create blog posts for static site generators.",
 	"license": "MIT",
 	"repository": "kahlil/blog-cli",
@@ -20,7 +20,8 @@
 	},
 	"files": [
 		"index.js",
-		"cli.js"
+		"cli.js",
+		"lib/*"
 	],
 	"keywords": [
 		"cli-app",

@@ -11,16 +11,19 @@ module.exports = async (input, flags) => {
 	if (flags.path) {
 		config.set('path', flags.path);
 		console.log(`Saved the path \`${flags.path}\` for your blog posts`);
+		return;
 	}
 
 	if (flags.editor) {
 		config.set('editor', flags.editor);
 		console.log(`Saved the path ${flags.editor} as your editor`);
+		return;
 	}
 
 	if (flags.publish) {
 		await publish();
 		console.log('Your changes have been pushed');
+		return;
 	}
 
 	if (input) {
