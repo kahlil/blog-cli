@@ -8,8 +8,7 @@ const options = {
 	flags: {
 		path: {
 			type: 'string',
-			alias: 'p',
-			default: '.'
+			alias: 'p'
 		},
 		publish: {
 			type: 'boolean',
@@ -18,8 +17,7 @@ const options = {
 		},
 		editor: {
 			type: 'string',
-			alias: 'e',
-			default: 'ia writer'
+			alias: 'e'
 		}
 	}
 };

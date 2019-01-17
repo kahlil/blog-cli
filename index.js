@@ -7,15 +7,14 @@ const writeFile = require('./lib/write-file');
 const publish = require('./lib/publish');
 
 module.exports = async (input, flags) => {
-	console.log(flags);
 	// Configure the path to the markdown posts.
-	if (flags.path !== '.') {
+	if (flags.path) {
 		config.set('path', flags.path);
-		console.log(`Saved the path \`${flags.path}\` for your blog posts`);
+		console.log(`Saved the path\n\`${flags.path}\`\nfor your blog posts`);
 		return;
 	}
 
-	if (flags.editor !== 'ia writer') {
+	if (flags.editor) {
 		config.set('editor', flags.editor);
 		console.log(`Saved ${flags.editor} as your editor`);
 		return;
@@ -37,8 +36,12 @@ module.exports = async (input, flags) => {
 		const fileName = `${yyyy}-${mm}-${dd}-${input}`;
 		const filePath = `${config.get('path')}/${fileName}.md`;
 		writeFile(filePath);
+		const editor = config.get('editor');
+		if (!editor) {
+			throw new Error('No editor has been set.');
+		}
 		await open(filePath, {
-			app: config.get('editor'),
+			app: editor,
 			wait: false
 		});
 		console.log(`Created your new post at ${filePath} and openening it in your editor`);
