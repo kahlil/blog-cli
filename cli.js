@@ -14,7 +14,7 @@ const options = {
 		publish: {
 			type: 'boolean',
 			alias: 'pub',
-			default: true
+			default: false
 		},
 		editor: {
 			type: 'string',
