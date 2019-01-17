@@ -1,69 +1,33 @@
-# blog-cli [![Build Status](https://travis-ci.com/kahlil/blog-cli.svg?branch=master)](https://travis-ci.com/kahlil/blog-cli)
+# blog-cli
 
 > A cli to create blog posts for static site generators.
-
 
 ## Install
 
 ```
-$ npm install blog-cli
+$ npm install --global @kahlil/blog-cli
 ```
-
 
 ## Usage
 
-```js
-const blogCli = require('blog-cli');
-
-blogCli('unicorns');
-//=> 'unicorns & rainbows'
 ```
+$ blog [slug]
 
+Options
+	--path  ~/path/to/posts [Default: .]
+	--editor 'visual studio code' [Default: 'ia writer']
+	--publish [Default: true]
 
-## API
-
-### blogCli(input, [options])
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-Type: `Object`
-
-##### foo
-
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.
-
-
-## CLI
-
+Examples
+	$ blog --path ~/my-blog/posts
+	Saved the path \`~/my-blog/posts\` for your blog posts
+	$ blog --editor 'visual studio code'
+	Saved visual studio code as your editor
+	$ blog my-cool-post
+	Created 2019-01-02-my-cool-post at ~/my-blog/posts
+	$ blog --publish
+	Your changes have been pushed
 ```
-$ npm install --global blog-cli
-```
-
-```
-$ blog-cli --help
-
-  Usage
-    blog-cli [input]
-
-  Options
-    --foo  Lorem ipsum [Default: false]
-
-  Examples
-    $ blog-cli
-    unicorns & rainbows
-    $ blog-cli ponies
-    ponies & rainbows
-```
-
 
 ## License
 

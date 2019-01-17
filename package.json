@@ -1,5 +1,5 @@
 {
-	"name": "blog-cli",
+	"name": "@kahlil/blog-cli",
 	"version": "1.0.0",
 	"description": "A cli to create blog posts for static site generators.",
 	"license": "MIT",
@@ -24,8 +24,7 @@
 	],
 	"keywords": [
 		"cli-app",
-		"cli",
-		""
+		"cli"
 	],
 	"dependencies": {
 		"conf": "^2.1.0",

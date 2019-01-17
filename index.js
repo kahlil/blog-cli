@@ -6,16 +6,16 @@ const config = require('./lib/config');
 const writeFile = require('./lib/write-file');
 const publish = require('./lib/publish');
 
-module.exports = (input, flags) => {
+module.exports = async (input, flags) => {
 	// Configure the path to the markdown posts.
 	if (flags.path) {
 		config.set('path', flags.path);
-		return `Set the path \`${flags.path}\` for your blog posts`;
+		console.log(`Saved the path \`${flags.path}\` for your blog posts`);
 	}
 
-	if (input === 'publish') {
-		publish();
-		return '✨ Your changes have been published';
+	if (flags.publish) {
+		await publish();
+		console.log('Your changes have been pushed');
 	}
 
 	if (input) {
@@ -28,10 +28,10 @@ module.exports = (input, flags) => {
 		const fileName = `${yyyy}-${mm}-${dd}-${input}`;
 		const filePath = `${config.get('path')}/${fileName}.md`;
 		writeFile(filePath);
-		open(filePath, {
-			app: 'ia writer',
+		await open(filePath, {
+			app: config.get('editor'),
 			wait: false
 		});
-		return `✨ Created your new post at ${filePath} and opened it in an editor`;
+		console.log(`Created your new post at ${filePath} and openening it in your editor`);
 	}
 };
