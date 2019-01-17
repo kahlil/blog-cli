@@ -7,16 +7,17 @@ const writeFile = require('./lib/write-file');
 const publish = require('./lib/publish');
 
 module.exports = async (input, flags) => {
+	console.log(flags);
 	// Configure the path to the markdown posts.
-	if (flags.path) {
+	if (flags.path !== '.') {
 		config.set('path', flags.path);
 		console.log(`Saved the path \`${flags.path}\` for your blog posts`);
 		return;
 	}
 
-	if (flags.editor) {
+	if (flags.editor !== 'ia writer') {
 		config.set('editor', flags.editor);
-		console.log(`Saved the path ${flags.editor} as your editor`);
+		console.log(`Saved ${flags.editor} as your editor`);
 		return;
 	}
 
