@@ -36,6 +36,8 @@ Options
 	--help
 	--path  ~/path/to/posts [Default: .]
 	--editor 'visual studio code' [Default: 'ia writer']
+	--templates ~/path/to/templates [Default: .]
+    --templatename mytemplatename [Default: .]
 	--publish [Default: true]
 
 Examples
@@ -49,6 +51,10 @@ Examples
 	Created your new post at
 	/Users/username/my-blog/posts/2019-01-17-my-cool-post.md
 	and openening it in your editor
+
+	$ blog --templates ~/my-blog/post/templates
+
+    $ blog --templatename myposttemplate
 
 	$ blog --publish
 	Your changes have been pushed
