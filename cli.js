@@ -1,29 +1,37 @@
 #!/usr/bin/env node
 
-'use strict';
-const meow = require('meow');
-const blogCli = require('.');
+'use strict'
+const meow = require('meow')
+const blogCli = require('.')
 
 const options = {
-	flags: {
-		path: {
-			type: 'string',
-			alias: 'p'
-		},
-		publish: {
-			type: 'boolean',
-			alias: 'pub',
-			default: false
-		},
-		editor: {
-			type: 'string',
-			alias: 'e'
-		}
-	}
-};
+  flags: {
+    path: {
+      type: 'string',
+      alias: 'p'
+    },
+    publish: {
+      type: 'boolean',
+      alias: 'pub',
+      default: false
+    },
+    editor: {
+      type: 'string',
+      alias: 'e'
+    },
+    templates: {
+      type: 'string',
+      alias: 'tp'
+    },
+    templatename: {
+      type: 'string',
+      alias: 'tpn'
+    }
+  }
+}
 
 const cli = meow(
-	`
+  `
 	Usage
 		$ blog [slug]
 
@@ -31,6 +39,8 @@ const cli = meow(
 		--help
 		--path  ~/path/to/posts [Default: .]
 		--editor 'visual studio code' [Default: 'ia writer']
+    --templates ~/path/to/templates [Default: .]
+    --templatename mytemplatename [Default: .]
 		--publish [Default: true]
 
 	Examples
@@ -45,10 +55,14 @@ const cli = meow(
 		/Users/username/my-blog/posts/2019-01-17-my-cool-post.md
 		and openening it in your editor
 
+    $ blog --templates ~/my-blog/post/templates
+    
+    $ blog --templatename myposttemplate
+
 		$ blog --publish
 		Your changes have been pushed
 	`,
-	options
-);
+  options
+)
 
-blogCli(cli.input[0], cli.flags);
+blogCli(cli.input[0], cli.flags)
