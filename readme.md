@@ -37,7 +37,7 @@ Options
 	--path  ~/path/to/posts [Default: .]
 	--editor 'visual studio code' [Default: 'ia writer']
 	--templates ~/path/to/templates [Default: .]
-    --templatename mytemplatename [Default: .]
+	--templatename mytemplatename [Default: .]
 	--publish [Default: true]
 
 Examples
@@ -54,7 +54,7 @@ Examples
 
 	$ blog --templates ~/my-blog/post/templates
 
-    $ blog --templatename myposttemplate
+	$ blog --templatename myposttemplate
 
 	$ blog --publish
 	Your changes have been pushed
