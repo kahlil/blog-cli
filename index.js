@@ -20,6 +20,16 @@ module.exports = async (input, flags) => {
 		return;
 	}
 
+	if (flags.templates) {
+		config.set('templates', flags.templates);
+		console.log(`Saved ${flags.templates} as your templates folder`);
+	}
+
+	if (flags.templatename) {
+		config.set('templatename', flags.templatename);
+		console.log(`Saved ${flags.templatename} as your post template`);
+	}
+
 	if (flags.publish) {
 		await publish();
 		console.log('Your changes have been pushed');
